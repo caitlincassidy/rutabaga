@@ -39,11 +39,12 @@ urlpatterns = patterns('',
     url(r'^sistersonly/elections/slating/results/$', 'website.views.sistersonly_elections_slating_results'),
 
     # Attendance-related things
-    url(r'^sistersonly/attendancenew/mark$', 'website.views.sistersonly_attendancenew_mark'),
-    url(r'^sistersonly/attendancenew/viewall$', 'website.views.sistersonly_attendancenew_viewall'),
-    url(r'^sistersonly/attendancenew/personal$', 'website.views.sistersonly_attendancenew_personal'),
-    url(r'^sistersonly/attendancenew/excuse/submit$', 'website.views.sistersonly_attendancenew_excuse_submit'),
-    url(r'^sistersonly/attendancenew/excuse/approve$', 'website.views.sistersonly_attendancenew_excuse_approve'),
+    url(r'^sistersonly/attendancenew/viewall/$', 'website.views.sistersonly_attendancenew_viewall'),
+    url(r'^sistersonly/attendancenew/personal/$', 'website.views.sistersonly_attendancenew_personal'),
+    url(r'^sistersonly/attendancenew/excuse/submit/$', 'website.views.sistersonly_attendancenew_excuse_submit'),
+    url(r'^sistersonly/attendancenew/excuse/approve/$', 'website.views.sistersonly_attendancenew_excuse_approve'),
+    url(r'^sistersonly/attendancenew/events/mark/$', 'website.views.sistersonly_attendancenew_events_mark'),
+    url(r'^sistersonly/attendancenew/events/viewall/$', 'website.views.sistersonly_attendancenew_events_viewall'),
 
     
     # Uncomment the admin/doc line below to enable admin documentation:
