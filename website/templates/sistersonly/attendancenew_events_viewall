@@ -5,6 +5,25 @@
 {% block main %}
 <div class="content">
   <h1> View All Events TODO </h1>
+
+  <table class="data-table">
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Points</th>
+    </tr>
+  {% for event in events %}
+    <tr>
+      <td><a href="{{ event.id }}/">{{ event.name }}</a></td>
+      <td>{{ event.date }}</td>
+      <td>{{ event.points }}</td>
+      <td> Submit Excuse </td>
+      <td> Mark Attendance </td>
+    </tr>
+  {% endfor %}
+  </table>
+
+
 </div>
 
 <!-- There should be options to submit an excuse for that event,
