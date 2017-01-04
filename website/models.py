@@ -19,7 +19,8 @@ STATUS = (
   (0, 'Active'),
   (1, 'Alum'),
   (2, 'New Member'),
-  (3, 'PRC')
+  (3, 'PRC'),
+  (4, 'Abroad')
 )
 
 class Sister(models.Model):
@@ -63,13 +64,21 @@ class SisterForm(ModelForm):
     model = Sister
     fields = ('phone_number', 'residence', 'major', 'majors', 'hometown', 'bio', 'interests', 'big', 'little', 'littles', 'memory', 'why_axo', 'what_axo_means')
 
+
 class Event(models.Model):
   name = models.CharField(max_length=100)
   date = models.DateField()
   points = models.IntegerField()
+  is_mandatory = models.BooleanField(default=False, verbose_name='Mandatory Event')
 
   # The sisters who were at the event
   sisters = models.ManyToManyField(Sister, blank=True)
+
+  # The sisters who were excused from the event
+  sisters_excused = models.ManyToManyField(Sister, blank=True)
+
+  # The sisters who were absent from the event
+  sisters_absent = models.ManyToManyField(Sister, blank=True)
 
   def __unicode__(self):
     return unicode("%s (%s)" % (self.name, self.date))
